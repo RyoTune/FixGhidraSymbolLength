@@ -21,9 +21,9 @@ foreach (var symbol in xmlSymbols)
     var nameAttr = symbol.Attribute("name")!;
     if (nameAttr.Value.Length > 2000)
     {
-        nameAttr.Value = symbol.Value[..2000];
-        numInvalidSymbols++;
         Console.WriteLine($"Fixed Name: {nameAttr.Value}");
+        nameAttr.Value = nameAttr.Value[..2000];
+        numInvalidSymbols++;
     }
 }
 
